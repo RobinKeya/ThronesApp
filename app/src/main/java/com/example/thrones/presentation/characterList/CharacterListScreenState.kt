@@ -1,6 +1,6 @@
 package com.example.thrones.presentation.characterList
 
-import com.example.thrones.data.remote.CharacterInfo
+import com.example.thrones.domain.data.models.CharacterInfo
 
 data class CharacterListScreenState(
     val chars : List<CharacterInfo>,

@@ -6,8 +6,8 @@ import retrofit2.http.Path
 interface ThronesApiService {
 
     @GET("/api/v2/Characters")
-    suspend fun getCharacters():List<CharacterInfo>
+    suspend fun getCharacters():List<CharacterInfoDto>
 
     @GET("/api/v2/Characters/{id}")
-    suspend fun getCharacter(@Path("id")id: Int):CharacterInfo
+    suspend fun getCharacter(@Path("id")id: Int):CharacterInfoDto
 }

@@ -1,6 +1,6 @@
 package com.example.thrones.data.remote
 
-data class CharacterInfo(
+data class CharacterInfoDto(
     val family: String,
     val firstName: String,
     val fullName: String,

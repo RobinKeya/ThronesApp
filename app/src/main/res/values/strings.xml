@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Thrones</string>
+    <string name="character_details">Character Details</string>
+    <string name="got_characters">GOT Characters</string>
 </resources>

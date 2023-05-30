@@ -5,7 +5,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.thrones.data.ThronesRepository
 import com.example.thrones.data.di.MainDispatcher
-import com.example.thrones.data.remote.CharacterInfo
+import com.example.thrones.data.remote.CharacterInfoDto
+import com.example.thrones.domain.data.models.CharacterInfo
+import com.example.thrones.domain.useCases.GetAllCharactersUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -15,7 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class CharacterListViewModel @Inject constructor(
     @MainDispatcher private val dispatcher: CoroutineDispatcher,
-    private val thronesRepository: ThronesRepository
+    private val getAllCharactersUseCase: GetAllCharactersUseCase
 ):ViewModel() {
     private val _state = mutableStateOf(CharacterListScreenState(
         chars = emptyList(),
@@ -41,6 +43,6 @@ class CharacterListViewModel @Inject constructor(
         }
     }
     private suspend fun getCharacters():List<CharacterInfo>{
-        return thronesRepository.getCharacters()
+        return getAllCharactersUseCase()
     }
 }

@@ -10,7 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.thrones.ui.theme.Typography
@@ -59,7 +59,8 @@ fun TopBar() {
         modifier = Modifier
             .padding(16.dp)
             .fillMaxWidth()) {
-        Text(text = "Character Details",
+        Text(
+            stringResource(com.example.thrones.R.string.character_details),
         style = Typography.h2
         )
     }
