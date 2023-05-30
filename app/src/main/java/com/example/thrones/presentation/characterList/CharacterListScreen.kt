@@ -19,10 +19,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.thrones.data.remote.CharacterInfo
 import com.example.thrones.ui.theme.Typography
+import com.example.thrones.utils.Constants
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -36,7 +39,9 @@ fun CharacterListScreen(
             contentAlignment = Alignment.Center
         ) {
             if (characterListScreenState.isLoading){
-                CircularProgressIndicator()
+                CircularProgressIndicator(modifier = Modifier.semantics {
+                    contentDescription = Constants.IS_LOADING
+                })
             }
             if (characterListScreenState.error != null){
                 Text(text = characterListScreenState.error)
