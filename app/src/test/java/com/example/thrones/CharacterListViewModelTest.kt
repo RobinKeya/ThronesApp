@@ -41,10 +41,7 @@ class CharacterListViewModelTest {
         ))
     }
 
-    @Test
-    
-
-    private fun getCharacterViewModel(): CharacterListViewModel{
+    fun getCharacterViewModel(): CharacterListViewModel{
         val repository = ThronesRepositoryImpl(FakeApiService(),dispatcher)
         val getAllCharactersUseCase = GetAllCharactersUseCase(repository,dispatcher)
         return CharacterListViewModel(dispatcher,getAllCharactersUseCase)
