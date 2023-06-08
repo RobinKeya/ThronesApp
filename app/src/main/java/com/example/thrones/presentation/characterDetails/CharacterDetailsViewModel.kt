@@ -4,9 +4,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.thrones.data.ThronesRepository
 import com.example.thrones.data.di.MainDispatcher
-import com.example.thrones.data.remote.CharacterInfoDto
 import com.example.thrones.domain.data.models.CharacterInfo
 import com.example.thrones.domain.useCases.GetCharacterUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel

@@ -84,7 +84,7 @@ dependencies {
     kapt "androidx.room:room-compiler:2.5.1"
     implementation "androidx.room:room-ktx:2.5.1"
 
-    //viewmodel
+    //view-model
     implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1'
 
     //hilt

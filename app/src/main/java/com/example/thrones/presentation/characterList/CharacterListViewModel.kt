@@ -38,7 +38,8 @@ class CharacterListViewModel @Inject constructor(
             val chars = getCharacters()
             _state.value = _state.value.copy(
                 chars = chars,
-                isLoading = false
+                isLoading = false,
+                error = null
             )
         }
     }

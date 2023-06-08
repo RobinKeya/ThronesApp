@@ -1,11 +1,8 @@
 package com.example.thrones
 
-import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.ComposeContentTestRule
 import androidx.compose.ui.test.junit4.createComposeRule
-import androidx.compose.ui.test.onNodeWithContentDescription
-import androidx.compose.ui.test.onNodeWithText
-import androidx.compose.ui.test.performClick
 import com.example.thrones.presentation.characterList.CharacterListScreen
 import com.example.thrones.presentation.characterList.CharacterListScreenState
 import com.example.thrones.ui.theme.ThronesTheme
@@ -77,5 +74,6 @@ class CharacterListScreenTest {
         }
         testRule.onNodeWithContentDescription(Constants.IS_LOADING).assertDoesNotExist()
         testRule.onNodeWithText(character.fullName).performClick()
+        testRule.onNodeWithText(character.fullName).assertHasClickAction()
     }
 }
